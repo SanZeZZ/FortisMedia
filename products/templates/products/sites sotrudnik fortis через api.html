@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сотрудник</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            color: #444444;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffff;
+        }
+        .green-box {
+            background-color: #31C48D;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .employee-container {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 20px;
+        }
+        .left-container {
+            flex: 1;
+            background: url('https://drive.google.com/uc?id=1w1iuc1V5iKmztEsuXMT_mdlW2AbLDxgM') no-repeat center center;
+            background-size: cover;
+            padding-top: 66.67%;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .right-container, .contacts-container {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+            opacity: 1;
+        }
+        .right-container h2, .contacts-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .right-container p, .contacts-container p {
+            font-size: 20px;
+        }
+        .right-container button, .contacts-container button {
+            font-size: 20px;
+            background-color: #31C48D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .contacts-container {
+            display: none;
+        }
+        .contacts-container a {
+            display: block;
+            font-size: 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #444444;
+        }
+        .contacts-container .social-icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contacts-container .social-icons a {
+            margin-right: 10px;
+            font-size: clamp(40px, 5vw, 65px);
+        }
+        .back-button {
+            font-size: 24px;
+            margin-top: 10px;
+            cursor: pointer; /* Скрываем по умолчанию */
+        }
+
+        .download-contact-button {
+            text-align: center;
+        }
+
+        .add-contact-button {
+            display: none;
+        }
+        .back-button {
+                display: block;
+            }
+
+        @media screen and (max-width: 431px) {
+            .employee-container {
+                flex-direction: column;
+            }
+            .right-container {
+                display: block;
+                margin-top: 25px;
+                margin-left: 0px;
+            }
+            .contacts-container {
+                display: block;
+                margin-top: 25px;
+                margin-left: 0px;
+            }
+            .left-container {
+                flex: 1;
+                background: url('https://drive.google.com/uc?id=1w1iuc1V5iKmztEsuXMT_mdlW2AbLDxgM') no-repeat center center;
+                background-size: cover;
+                padding-top: 150%;
+                border: 1px solid #D4D4D4;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .add-contact-button {
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .right-container button {
+                display: none;
+            }
+            .back-button {
+                display: none;
+            }
+            
+        }
+
+        @media screen and (min-width: 432px) {
+            .download-contact-button {
+                display: none;
+            }
+            /* Показываем кнопку "стрелочка" на более широких экранах */
+            .back-button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="green-box">СОТРУДНИК</div>
+
+        <div class="employee-container">
+            <div class="left-container"></div>
+            <div class="right-container">
+                <h2>Должность</h2>
+                <p>Описание</p>
+                <button onclick="showContacts()">СВЯЗАТЬСЯ</button>
+            </div>
+            <div class="contacts-container">
+                <h2>Контакты</h2>
+                <a href="mailto:fortiscompani@gmail.com">
+                    <span class="material-symbols-outlined">forward_to_inbox</span> fortiscompani@gmail.com
+                </a>
+                <a href="tel:+79885535099">
+                    <span class="material-symbols-outlined">phone_in_talk</span> +79885535099
+                </a>
+                <div class="social-icons">
+                    <a href="https://vk.com/dskrostovondon" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1OaKRPMfs8e-hT1E07FoVLmoROPsGhHOr" alt="VK" style="max-width: 50px; margin-right: 10px;"></a>
+                    <a href="https://instagram.com/dsk_rostovondon?igshid=ZDdkNTZiNTM=" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1UazfIqL4-reMgJ_WV8f11h6byPNXvMsQ" alt="Instagram" style="max-width: 50px; margin-right: 10px;"></a>
+                    <a href="https://wa.me/79889981035" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1KrjXnFu-3vR7_ql_zBVKf_HYSBjXhR9W" alt="WhatsApp" style="max-width: 50px; margin-right: 10px;"></a>
+                    <a href="https://t.me/dskrostovondon" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1ClMVc6BZK_s9eb6bQxYeKD0oBm8zqp26" alt="Telegram" style="max-width: 50px; margin-right: 10px;"></a>
+                </div>
+                <div class="download-contact-button">
+                    <button onclick="downloadContact()">Добавить в контакты</button>
+                </div>
+                <div class="back-button" onclick="showPosition()">←</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContacts() {
+            const rightContainer = document.querySelector('.right-container');
+            const contactsContainer = document.querySelector('.contacts-container');
+            rightContainer.style.opacity = '0';
+            setTimeout(() => {
+                rightContainer.style.display = 'none';
+                contactsContainer.style.display = 'block';
+                setTimeout(() => {
+                    contactsContainer.style.opacity = '1';
+                }, 10);
+            }, 500);
+        }
+
+        function addToContacts() {
+    const contactInfo = {
+        name: 'Имя сотрудника',
+        phone: '+79885535099',
+        email: 'fortiscompani@gmail.com',
+        website: 'https://example.com',
+    };
+
+    if ('contacts' in navigator && 'ContactsManager' in window) {
+        // Для Safari на iOS
+        if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
+            const contact = new Contact();
+            contact.name = new ContactName({ formatted: contactInfo.name });
+            contact.emails = [new ContactField('email', contactInfo.email)];
+            contact.phoneNumbers = [new ContactField('tel', contactInfo.phone)];
+            contact.urls = [new ContactField('url', contactInfo.website)];
+
+            const options = { contact };
+            const createContact = new ContactsManager(options);
+
+            createContact.save()
+                .then(() => {
+                    alert('Контакт успешно добавлен в книгу контактов.');
+                })
+                .catch(error => {
+                    alert('Произошла ошибка при добавлении контакта: ' + error);
+                });
+        }
+        // Для Chrome, Opera и Firefox на Android
+        else if (navigator.userAgent.includes('Android')) {
+            navigator.contacts.select(['name'], { multiple: false })
+                .then(contacts => {
+                    if (contacts.length === 0) {
+                        const newContact = new Contact();
+                        newContact.name = new ContactName([contactInfo.name]);
+                        newContact.emails = [new ContactField('email', contactInfo.email)];
+                        newContact.phoneNumbers = [new ContactField('tel', contactInfo.phone)];
+                        newContact.urls = [new ContactField('url', contactInfo.website)];
+
+                        const options = { contact: newContact };
+                        const createContact = new ContactsManager(options);
+
+                        createContact.save()
+                            .then(() => {
+                                alert('Контакт успешно добавлен в книгу контактов.');
+                            })
+                            .catch(error => {
+                                alert('Произошла ошибка при добавлении контакта: ' + error);
+                            });
+                    } else {
+                        alert('Контакт уже существует в книге контактов.');
+                    }
+                })
+                .catch(error => {
+                    alert('Произошла ошибка при поиске контакта: ' + error);
+                });
+        } else {
+            alert('Функция добавления контакта недоступна на данном устройстве.');
+        }
+    } else {
+        alert('Функция добавления контакта недоступна на данном устройстве.');
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сотрудник</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            color: #444444;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffff;
+        }
+        .green-box {
+            background-color: #31C48D;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .employee-container {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 20px;
+        }
+        .left-container {
+            flex: 1;
+            background: url('https://drive.google.com/uc?id=1PJejOZIqjnlXqzRzzj_OtVfideHSbtr5') no-repeat center center;
+            background-size: cover;
+            padding-top: 66.67%;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .right-container, .contacts-container {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-left: 20px;
+            opacity: 1;
+        }
+        .right-container h2, .contacts-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            background-color: #31C48D; /* Цвет фона */
+            color: white; /* Цвет текста */
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+        }
+        .right-container p, .contacts-container p {
+            font-size: 20px;
+        }
+        .right-container button, .contacts-container button {
+            background-color: #31C48D;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 35px;
+            border-radius: 5px;
+            /* Убираем обводку */
+            border: none;
+            /* Добавляем тень */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            /* Убираем обводку при нажатии */
+            outline: none;
+        }
+        .contacts-container {
+            display: none;
+        }
+        .contacts-container a {
+            display: block;
+            font-size: 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #444444;
+            
+        }
+        .contacts-container .social-icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contacts-container .social-icons a {
+            margin-right: 10px;
+            font-size: clamp(40px, 5vw, 65px);
+        }
+        .back-button {
+            font-size: 24px;
+            margin-top: 10px;
+            cursor: pointer; /* Скрываем по умолчанию */
+        }
+
+        .download-contact-button {
+            text-align: center;
+        }
+
+        .add-contact-button {
+            display: none;
+        }
+        .back-button {
+                display: block;
+            }
+
+        @media screen and (max-width: 431px) {
+            .employee-container {
+                flex-direction: column;
+            }
+            .right-container {
+                display: block;
+                margin-top: 25px;
+                margin-left: 0px;
+            }
+            .contacts-container {
+                display: block;
+                margin-top: 25px;
+                margin-left: 0px;
+            }
+            .left-container {
+                flex: 1;
+                background: url('https://drive.google.com/uc?id=1PJejOZIqjnlXqzRzzj_OtVfideHSbtr5') no-repeat center center;
+                background-size: cover;
+                padding-top: 150%;
+                border: 1px solid #D4D4D4;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .add-contact-button {
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .right-container button {
+                display: none;
+            }
+            .back-button {
+                display: none;
+            }
+            
+        }
+
+        @media screen and (min-width: 432px) {
+            .download-contact-button {
+                display: none;
+            }
+            /* Показываем кнопку "стрелочка" на более широких экранах */
+            .back-button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="green-box">СОТРУДНИК</div>
+
+        <div class="employee-container">
+            <div class="left-container"></div>
+            <div class="right-container">
+                <h2>Project mender</h2>
+        <p>
+            <strong>Максим Александрович</strong> — наш опытный Project mender и дизайнер. Его целью является создание уникальных и
+            вдохновляющих дизайн-решений, которые воплощают идеи в реальность. Он участвует в проектах с большой
+            ответственностью, следит за каждой деталью и обеспечивает успешное выполнение задач. Если вам нужен
+            профессионал, способный превратить вашу идею в проект, Максим Александрович всегда готов взяться за
+            работу.
+        </p>
+                <button onclick="showContacts()">СВЯЗАТЬСЯ</button>
+            </div>
+            <div class="contacts-container">
+    <h2>Контакты</h2>
+    <a href="mailto:fortiscompani@gmail.com?subject=For%20Project%20mender&body=Максиму%20Александровичу,%0Aот%20....%0A(Прошу%20вас...)" onclick="sendEmail()">
+        <span class="material-symbols-outlined" style="vertical-align: middle;">forward_to_inbox</span>
+        <span style="vertical-align: middle;">fortiscompani@gmail.com</span>
+    </a>
+    <a href="tel:+79885535099" onclick="callNumber()">
+        <span class="material-symbols-outlined" style="vertical-align: middle;">phone_in_talk</span>
+        <span style="vertical-align: middle;">+79885535099</span>
+    </a> 
+                <div class="social-icons">
+                    <a href="https://instagram.com/abamaks?utm_source=qr&igshid=YzU1NGVlODEzOA%3D%3D" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1UazfIqL4-reMgJ_WV8f11h6byPNXvMsQ" alt="Instagram" style="max-width: 50px; margin-right: 10px;"></a>
+                    <a href="https://wa.me/905342710215" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1KrjXnFu-3vR7_ql_zBVKf_HYSBjXhR9W" alt="WhatsApp" style="max-width: 50px; margin-right: 10px;"></a>
+                    <a href="https://t.me/Mini_sche" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1ClMVc6BZK_s9eb6bQxYeKD0oBm8zqp26" alt="Telegram" style="max-width: 50px; margin-right: 10px;"></a>
+                </div>
+                <div class="download-contact-button">
+                    <button onclick="downloadContact()">Добавить в контакты</button>
+                </div>
+                <div class="back-button" onclick="showPosition()"><span style="font-size: 45px; color: #31C48D;">←</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+  function showContacts() {
+            const rightContainer = document.querySelector('.right-container');
+            const contactsContainer = document.querySelector('.contacts-container');
+            
+            // Анимация скрытия
+            rightContainer.style.transition = 'opacity 0.7s ease-in-out';
+            rightContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                rightContainer.style.display = 'none';
+                
+                // Анимация появления следующей карточки
+                contactsContainer.style.display = 'block';
+                contactsContainer.style.opacity = '0'; // Начальная нулевая прозрачность
+                
+                setTimeout(() => {
+                    contactsContainer.style.transition = 'opacity 0.7s ease-in-out';
+                    contactsContainer.style.opacity = '1'; // Плавное появление
+                }, 10);
+            }, 700); // Увеличили продолжительность анимации до 0.7 секунды
+        }
+
+        function downloadContact() {
+    const contactInfo = {
+        name: 'Максим Александрович создание сайтов',
+        phone: '+79885535099',
+        email: 'fortiscompani@gmail.com',
+        website: 'https://example.com',
+    };
+
+    const vCardText = `BEGIN:VCARD
+VERSION:3.0
+FN:${contactInfo.name}
+TEL:${contactInfo.phone}
+EMAIL:${contactInfo.email}
+URL:${contactInfo.website}
+END:VCARD`;
+
+    const blob = new Blob([vCardText], { type: 'text/vcard' });
+    const blobUrl = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = blobUrl;
+    a.download = `${contactInfo.name}.vcf`;
+
+    document.body.appendChild(a);
+    a.click();
+
+    document.body.removeChild(a);
+    URL.revokeObjectURL(blobUrl);
+}
+
+        function showPosition() {
+            const rightContainer = document.querySelector('.right-container');
+            const contactsContainer = document.querySelector('.contacts-container');
+            
+            // Анимация скрытия
+            contactsContainer.style.transition = 'opacity 0.7s ease-in-out';
+            contactsContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                contactsContainer.style.display = 'none';
+                
+                // Анимация появления предыдущей карточки
+                rightContainer.style.display = 'block';
+                rightContainer.style.opacity = '0'; // Начальная нулевая прозрачность
+                
+                setTimeout(() => {
+                    rightContainer.style.transition = 'opacity 0.7s ease-in-out';
+                    rightContainer.style.opacity = '1'; // Плавное появление
+                }, 10);
+            }, 700); // Увеличили продолжительность анимации до 0.7 секунды
+        }
+    </script>
+</body>
+</html>

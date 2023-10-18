@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #444444;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .green-box {
+            background-color: #31C48D;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+       .section {
+    padding: 20px;
+    background-color: white;
+    color: #444444;
+    margin-bottom: 30px;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Добавление тени */
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: #31C48D; /* Цвет свечения */
+    border-radius: 5px;
+    z-index: -1; /* Отправляет свечение под секцию */
+}
+
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    background-color: #31C48D; /* Цвет фона */
+    color: white; /* Цвет текста */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+        label {
+            font-weight: bold;
+            display: block;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .submit-button {
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background-color: #31C48D;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218F6D;
+        }
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        background-color: #31C48D; /* Цвет фона */
+        color: white; /* Цвет текста */
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="green-box">ОПРОС</div>
+       
+        <form action="#" method="post">
+            <div class="section">
+                <h2>*Контактные данные:</h2>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone">
+                <br>
+                <label for="name">ФИО:</label>
+                <input type="text" id="name" name="name">
+                <br>
+            </div>
+
+            <div class="section">
+                <h2>Основная информация о вашей компании:</h2>
+                <label for="company-name">Название компании:</label>
+                <input type="text" id="company-name" name="company-name">
+                <br>
+                <label for="company-activity">Основная деятельность:</label>
+                <input type="text" id="company-activity" name="company-activity">
+                <br>
+                <label for="company-description">Краткое описание компании и ее целей:</label>
+                <textarea id="company-description" name="company-description" rows="4"></textarea>
+                <br>
+            </div>
+
+            <div class="section">
+                <h2>Цели и задачи:</h2>
+<label>Какие ключевые задачи должен выполнять сайт?</label>
+                <ul>
+                    <li><input type="checkbox" name="goals[]" value="Увеличение онлайн-продаж"> Увеличение онлайн-продаж</li>
+                    <li><input type="checkbox" name="goals[]" value="Увеличение посещаемости сайта"> Увеличение посещаемости сайта</li>
+                    <li><input type="checkbox" name="goals[]" value="Улучшение брендовой видимости"> Улучшение брендовой видимости</li>
+                    <li><input type="checkbox" name="goals[]" value="Предоставление информации о продуктах/услугах"> Предоставление информации о продуктах/услугах</li>
+                    <li><input type="checkbox" name="goals[]" value="Другое"> Другое (уточните): <input type="text" name="other-goals"></li>
+                </ul>
+                <label>Какие ключевые задачи должен решать сайт?</label>
+                <ul>
+                    <li><input type="checkbox" name="tasks[]" value="Сбор контактных данных посетителей"> Сбор контактных данных посетителей</li>
+                    <li><input type="checkbox" name="tasks[]" value="Онлайн-консультации или поддержка"> Онлайн-консультации или поддержка</li>
+                    <li><input type="checkbox" name="tasks[]" value="Показать портфолио продуктов/услуг"> Показать портфолио продуктов/услуг</li>
+                    <li><input type="checkbox" name="tasks[]" value="Интеграция с социальными сетями"> Интеграция с социальными сетями</li>
+                    <li><input type="checkbox" name="tasks[]" value="Другое"> Другое (уточните): <input type="text" name="other-tasks"></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Целевая аудитория:</h2>
+<label>Кем является ваша аудитория?</label>
+                <ul>
+                    <li><input type="checkbox" name="audience[]" value="Потребители"> Потребители</li>
+                    <li><input type="checkbox" name="audience[]" value="Бизнес-клиенты"> Бизнес-клиенты</li>
+                    <li><input type="checkbox" name="audience[]" value="Молодежь"> Молодежь</li>
+                    <li><input type="checkbox" name="audience[]" value="Старшее поколение"> Старшее поколение</li>
+                    <li><input type="checkbox" name="audience[]" value="Другое"> Другое (уточните): <input type="text" name="other-audience"></li>
+                </ul>
+                <label>Есть ли какие-либо особенности в вашей аудитории, которые нужно учесть?</label>
+                <textarea name="audience-details" rows="4"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Содержание и функциональность:</h2>
+                <ul>
+<label>Какие страницы вы бы хотели использовать?</label>
+                    <li><input type="checkbox" name="pages[]" value="Главная страница"> Главная страница</li>
+                    <li><input type="checkbox" name="pages[]" value="Каталог продуктов/услуг"> Каталог продуктов/услуг</li>
+                    <li><input type="checkbox" name="pages[]" value="Блог/новости"> Блог/новости</li>
+                    <li><input type="checkbox" name="pages[]" value="О нас"> О нас</li>
+                    <li><input type="checkbox" name="pages[]" value="Контакты"> Контакты</li>
+                    <li><input type="checkbox" name="pages[]" value="Лендинговая"> Лендинговая</li>
+                    <li><input type="checkbox" name="pages[]" value="Другое"> Другое (уточните): <input type="text" name="other-pages"></li>
+                </ul>
+                <label>Какие функциональные возможности должны быть реализованы на сайте?</label>
+                <ul>
+                    <li><input type="checkbox" name="features[]" value="Формы обратной связи"> Формы обратной связи</li>
+                    <li><input type="checkbox" name="features[]" value="Корзина покупок"> Корзина покупок</li>
+                    <li><input type="checkbox" name="features[]" value="Поиск по сайту"> Поиск по сайту</li>
+                    <li><input type="checkbox" name="features[]" value="Регистрация пользователей"> Регистрация пользователей</li>
+                    <li><input type="checkbox" name="features[]" value="Интеграция с платежными системами"> Интеграция с платежными системами</li>
+                    <li><input type="checkbox" name="features[]" value="Другое"> Другое (уточните): <input type="text" name="other-features"></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Дизайн и стиль:</h2>
+                <label>Есть ли у вас предпочтения в дизайне?</label>
+                <input type="text" name="design-preferences">
+                <label>Есть ли у вас логотип или другие брендовые материалы, которые нужно включить в дизайн сайта?</label>
+                <input type="file" name="brand-materials">
+            </div>
+
+            <div class="section">
+                <h2>Технические требования:</h2>
+                <label>Хостинг: у вас есть предпочтения по хостинг-провайдеру или серверным требованиям?</label>
+                <input type="text" name="hosting-preferences">
+                <label>Технологии: есть ли какие-либо конкретные технологии или платформы, которые вы хотели бы использовать?</label>
+                <ul>
+                    <li><input type="checkbox" name="technologies[]" value="WordPress"> WordPress</li>
+                    <li><input type="checkbox" name="technologies[]" value="Joomla"> Joomla</li>
+                    <li><input type="checkbox" name="technologies[]" value="Tilda"> Tilda</li>
+                    <li><input type="checkbox" name="technologies[]" value="Индивидуальная разработка WEBприложения"> Индивидуальная разработка WEBприложения</li>
+                    <li><input type="checkbox" name="technologies[]" value="Другое"> Другое (уточните): <input type="text" name="other-technologies"></li>
+                </ul>
+                <label>Совместимость: есть ли особенности, связанные с совместимостью сайта?</label>
+                <input type="text" name="compatibility-details">
+            </div>
+
+            <div class="section">
+                <h2>Сроки и бюджет:</h2>
+                <label>Какие сроки вы планируете для завершения проекта?</label>
+                <input type="text" name="project-timeline">
+                <label>Есть ли у вас бюджетные ограничения для создания сайта?</label>
+                <input type="text" name="budget-limit">
+            </div>
+
+            <div class="section">
+                <h2>Дополнительные требования:</h2>
+                <label>Есть ли какие-либо дополнительные требования или пожелания?</label>
+                <textarea name="additional-requirements" rows="4"></textarea>
+            </div>
+
+            <div class="submit-button">
+                <input type="submit" value="Отправить">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

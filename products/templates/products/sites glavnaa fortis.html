@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+        }
+        .company-name {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .phone {
+            margin-right: 20px;
+        }
+        .accent-button {
+            background-color: #31C48D;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            /* Убираем обводку */
+            border: none;
+            /* Добавляем тень */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            /* Убираем обводку при нажатии */
+            outline: none;
+           
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .left-content {
+            flex: 45%;
+            padding-right: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            background-color: #31C48D; /* Цвет фона */
+            color: white; /* Цвет текста */
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #31C48D;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .content-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .left-button, .right-button, .accent-button {
+            height: 40px; /* Установите желаемую высоту здесь */
+            background-color: white;
+            color: 333;
+            text-align: center;
+            padding: 7px;
+            margin: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            /* Убираем обводку */
+            border: 1px;
+            /* Убираем обводку при нажатии */
+            outline: none;
+        }
+        
+        .advantage {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .advantage-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .right-content {
+            flex: 55%;
+            position: relative;
+        }
+        .main-photo-container {
+            flex: 1;
+            background: url('https://drive.google.com/uc?id=1g3-9cHj7GpHDp8_lQ_RJXz07ZA-ylyXh') no-repeat center center;
+            background-size: cover;
+            padding-top: 65%;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .main-photo {
+            width: 100%;
+            height: 100vh; /* Заполняет всю высоту экрана */
+            object-fit: cover; /* Заполнение фотографии */
+        }
+        .small-photo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 20vh;
+    
+            display: flex;
+            overflow: hidden;
+            flex: 1;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            margin-left: 20px;
+            opacity: 1;
+        }
+        .slider-container {
+            position: absolute;
+            bottom: -30px;
+            right: 20px; /* Отступ от правого края */
+            background-color: white;
+            display: flex;
+            overflow: hidden;
+            flex: 1;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            margin-left: 20px;
+            opacity: 1;
+        }
+        .slider-container img {
+            width: 100%;
+            height: auto;
+            max-height: 33vh;
+            display: none; /* Скрываем все слайды */
+        }
+        .slider-container img.active {
+            display: block; /* Отображаем только активный слайд */
+        }
+        /* Стили для мобильных устройств (максимальная ширина 768px) */
+/* Стили для мобильных устройств с шириной экрана до 768px */
+@media (max-width: 768px) {
+  header {
+    padding: 5px; /* Уменьшаем отступы */
+  }
+
+  .left-button,
+  .right-button,
+  .accent-button {
+    width: 100%; /* Растягиваем кнопки на всю ширину экрана */
+    margin: 10px 0; /* Уменьшаем отступы между кнопками */
+    font-size: 18px; /* Уменьшаем размер шрифта */
+  }
+
+  /* Другие стили для мобильных устройств */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="phone">Телефон</div>
+        <div class="company-name">Fortis</div>
+        <div class="content-buttons">
+            <button class="left-button">Кнопка 1</button>
+            <button class="left-button">Кнопка 2</button>
+            <button class="accent-button" style=" background-color: #31C48D; color: white; text-align: center; /* Добавляем тень */ box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2); 
+             /* Убираем обводку при нажатии */outline: none;" > Акцентная кнопка</button>
+        </div>
+    </header>
+    <div class="content">
+        <div class="left-content">
+            <h1>Заголовок</h1>
+            <h2>Подзаголовок</h2>
+            <p>Текст</p>
+            <div class="content-buttons">
+                <button class="left-button" style=" background-color: #31C48D; color: white; text-align: center;  padding: 7px; padding-top: 7px; padding-bottom: 7px;
+                margin: 20px; font-size: 20px; font-weight: bold;border-radius: 5px; /* Убираем обводку */ border: none;
+                /* Добавляем тень */ box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; /* Убираем обводку при нажатии */
+                outline: none;">Левая кнопка</button>
+                <button class="right-button" style=" background-color: white; color: 333; text-align: center; padding: 7px; margin: 15px;
+                font-size: 20px; font-weight: bold; border-radius: 5px; /* Убираем обводку */ border: 1px; /* Добавляем тень */
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);transition: transform 0.3s ease; /* Убираем обводку при нажатии */ outline: none;">Правая кнопка</button>
+            </div>
+            <div class="advantage">
+                <img src="icon1.png" alt="Иконка 1" class="advantage-icon">
+                <p>Текст преимущества 1</p>
+            </div>
+            <div class="advantage">
+                <img src="icon2.png" alt="Иконка 2" class="advantage-icon">
+                <p>Текст преимущества 2</p>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="main-photo-container">
+                <img src="https://drive.google.com/uc?id=1QpupMIp5_npRPH6TOMSTojBEL-IFzT27" alt="Маленькое фото" class="small-photo">
+                <div class="slider-container">
+                    <img src="https://drive.google.com/uc?id=1xIZFuGy4yoVTgDA5vKUa6z_yKNkpdeY4" alt="Слайд 1" class="active">
+                    <img src="https://drive.google.com/uc?id=1n0-GKEDZoPX1w7HVNVYaBfbeYaFezSVl" alt="Слайд 2">
+                    <img src="https://drive.google.com/uc?id=1GRkLjpLO8QhtF8E62RsveCCeFSx5h9HS" alt="Слайд 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript для управления слайдером
+        const slides = document.querySelectorAll('.slider-container img');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Навигация слайдера
+        const leftButton = document.querySelector('.left-button');
+        const rightButton = document.querySelector('.right-button');
+
+        leftButton.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+
+        rightButton.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+
+        // Автоматическое переключение слайдов
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000); // Переключение каждые 5 секунд (5000 миллисекунд)
+    </script>
+</body>
+</html>

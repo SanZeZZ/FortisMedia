@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+        }
+        .company-name {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .phone {
+            margin-right: 20px;
+        }
+        .accent-button {
+            background-color: #31C48D;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            /* Убираем обводку */
+            border: none;
+            /* Добавляем тень */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            /* Убираем обводку при нажатии */
+            outline: none;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .left-content {
+            flex: 45%;
+            padding-right: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            background-color: #31C48D; /* Цвет фона */
+            color: white; /* Цвет текста */
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #31C48D;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .content-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .left-button, .right-button, .accent-button {
+            height: 40px; /* Установите желаемую высоту здесь */
+            background-color: white;
+            color: 333;
+            text-align: center;
+            padding: 7px;
+            margin: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            /* Убираем обводку */
+            border: 1px;
+            /* Убираем обводку при нажатии */
+            outline: none;
+        }
+        .advantage {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .advantage-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .right-content {
+            flex: 55%;
+            position: relative;
+        }
+        .main-photo-container {
+            flex: 1;
+            background: url('https://drive.google.com/uc?id=1w1iuc1V5iKmztEsuXMT_mdlW2AbLDxgM') no-repeat center center;
+            background-size: cover;
+            padding-top: 150%;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .main-photo {
+            width: 100%;
+            height: 100vh; /* Заполняет всю высоту экрана */
+            object-fit: cover; /* Заполнение фотографии */
+        }
+        .small-photo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 20vh;
+            display: flex;
+            overflow: hidden;
+            flex: 1;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            margin-left: 20px;
+            opacity: 1;
+        }
+        .slider-container {
+            position: absolute;
+            bottom: -30px;
+            right: 20px; /* Отступ от правого края */
+            background-color: white;
+            display: flex;
+            overflow: hidden;
+            flex: 1;
+            border: 1px solid #D4D4D4;
+            border-radius: 5px;
+            margin-left: 20px;
+            opacity: 1;
+        }
+        .slider-container img {
+            width: 100%;
+            height: auto;
+            max-height: 33vh;
+            display: none; /* Скрываем все слайды */
+        }
+        .slider-container img.active {
+            display: block; /* Отображаем только активный слайд */
+        }
+        /* Стили для мобильных устройств (максимальная ширина 431px) */
+        @media screen and (max-width: 431px) {
+            .content {
+                flex-direction: column;
+            }
+            .left-content {
+                display: block;
+                margin-top: 25px;
+                margin-left: 0px;
+            }
+            .right-content {
+                flex: 1;
+                padding-top: 0;
+                margin-top: 25px;
+                border: 1px solid #D4D4D4;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            }
+            .small-photo {
+                position: static;
+                width: 100%;
+                margin-left: 0;
+            }
+            .slider-container {
+                position: static;
+                width: 100%;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+            .right-button {
+                display: none;
+            }
+            .back-button {
+                display: none;
+            }
+            /* Добавляем стили для бургер-меню */
+            .mobile-menu-icon {
+                display: block; /* Показываем иконку бургера */
+                font-size: 24px;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+            .menu {
+                display: none; /* Скрываем меню по умолчанию */
+                flex-direction: column;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+            }
+            .menu-item {
+                padding: 10px;
+                text-align: center;
+            }
+            .menu-item a {
+                text-decoration: none;
+                color: #333;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            /* Скрываем элементы для мобильных устройств */
+            .company-name,
+            .content-buttons,
+            .left-button,
+            .right-button {
+                display: none;
+            }
+        }
+        /* Стили для компьютерных устройств (минимальная ширина 432px) */
+        @media screen and (min-width: 432px) {
+            /* Скрываем бургер-меню для компьютерных устройств */
+            .mobile-menu-icon {
+                display: none;
+            }
+            /* Скрываем элементы для компьютерных устройств */
+            .menu {
+                display: flex;
+            }
+            .menu-item {
+                display: block;
+            }
+            /* Скрываем элементы меню для компьютерных устройств */
+            .menu-item.desktop-only {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="phone">Телефон</div>
+        <div class="company-name">Fortis</div>
+        <div class="menu">
+            <div class="menu-item desktop-only"><a href="#">Главная</a></div>
+            <div class="menu-item desktop-only"><a href="#">Услуги</a></div>
+            <div class="menu-item desktop-only"><a href="#">О нас</a></div>
+            <div class="menu-item desktop-only"><a href="#">Контакты</a></div>
+        </div>
+        <div class="content-buttons">
+            <button class="left-button">Кнопка 1</button>
+            <button class="left-button">Кнопка 2</button>
+            <button class="accent-button" style="background-color: #31C48D; color: white; text-align: center; box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2); outline: none;">Акцентная кнопка</button>
+        </div>
+    </header>
+    <div class="content">
+        <div class="left-content">
+            <h1>Заголовок</h1>
+            <h2>Подзаголовок</h2>
+            <p>Текст</p>
+            <div class="content-buttons">
+                <button class="left-button" style="background-color: #31C48D; color: white; text-align: center; padding: 7px; padding-top: 7px; padding-bottom: 7px; margin: 20px; font-size: 20px; font-weight: bold; border-radius: 5px; border: none; box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; outline: none;">Левая кнопка</button>
+                <button class="right-button" style="background-color: white; color: 333; text-align: center; padding: 7px; margin: 15px; font-size: 20px; font-weight: bold; border-radius: 5px; border: 1px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease; outline: none;">Правая кнопка</button>
+            </div>
+            <div class="advantage">
+                <img src="icon1.png" alt="Иконка 1" class="advantage-icon">
+                <p>Текст преимущества 1</p>
+            </div>
+            <div class="advantage">
+                <img src="icon2.png" alt="Иконка 2" class="advantage-icon">
+                <p>Текст преимущества 2</p>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="main-photo-container">
+                <img src="https://drive.google.com/uc?id=1QpupMIp5_npRPH6TOMSTojBEL-IFzT27" alt="Маленькое фото" class="small-photo">
+                <div class="slider-container">
+                    <img src="https://drive.google.com/uc?id=1xIZFuGy4yoVTgDA5vKUa6z_yKNkpdeY4" alt="Слайд 1" class="active">
+                    <img src="https://drive.google.com/uc?id=1n0-GKEDZoPX1w7HVNVYaBfbeYaFezSVl" alt="Слайд 2">
+                    <img src="https://drive.google.com/uc?id=1GRkLjpLO8QhtF8E62RsveCCeFSx5h9HS" alt="Слайд 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript для управления слайдером
+        const slides = document.querySelectorAll('.slider-container img');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Навигация слайдера
+        const leftButton = document.querySelector('.left-button');
+        const rightButton = document.querySelector('.right-button');
+
+        leftButton.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+
+        rightButton.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+
+        // Автоматическое переключение слайдов
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000); // Переключение каждые 5 секунд (5000 миллисекунд)
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

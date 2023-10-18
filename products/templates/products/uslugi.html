@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги FORTIS MEDIA</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+    <style type="text/css">
+        /* Здесь вставьте обновленные стили CSS */
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #444444;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 0px;
+        }
+
+        .green-box {
+            background-color: #31C48D;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            border-radius: 5px;
+            /* Добавлены изменения для тени и анимации */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .green-box:hover {
+            transform: translate(2px, 2px);
+            transition: transform 0.3s ease;
+        }
+
+        .split {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .left-half, .right-half {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Добавление тени */
+        }
+
+        .right-half {
+            background-image: url('фото1.jpg');
+            background-size: cover;
+        }
+               
+        .left-half p {
+            margin-bottom: 3px; /* Выберите желаемое значение отступа */ }
+    
+
+        .title-h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #31C48D;
+        }
+
+        .service-container {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Добавлены изменения для тени и анимации */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-container:hover {
+            transform: scale(1.05);
+        }
+
+        .service-container h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-container p {
+            font-size: 16px;
+            color: #444444;
+            margin-bottom: 10px;
+            line-height: 1.2; /* Расстояние между строками 1.2em (20% от размера шрифта) */
+        }
+
+        .service-container button {
+            background-color: #31C48D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            /* Добавлены изменения для тени и анимации */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-container button:hover {
+            background-color: #228B5A;
+            transform: scale(1.05);
+        }
+
+        .stages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .stage {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Добавление тени */
+            margin: 10px;
+            position: relative;
+        }
+
+        .stage h2, .left-half h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #31C48D;
+            margin-bottom: 10px;
+        }
+
+        .stage h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 1.2; /* Расстояние между строками 1.2em (20% от размера шрифта) */
+        }
+
+        .stage-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    overflow: hidden; /* Добавляем обрезание контента, который выходит за границы .stage-content */
+    height: 100%; /* Занимаем всю доступную высоту .stage-content */
+}
+        .stage-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #31C48D;
+            border-radius: 5px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .stage-text, .left-half {
+            flex: 1;
+            text-align: left;
+            line-height: 1.25; /* Расстояние между строками 1.2em (20% от размера шрифта) */
+
+        }
+
+
+        .arrow {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #31C48D;
+        }
+
+        .advantage {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+            margin: 10px;
+            position: relative;
+        }
+
+        .advantage h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #31C48D;
+            margin-bottom: 10px;
+        }
+
+        .advantage h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 1.2; /* Расстояние между строками 1.2em (20% от размера шрифта) */
+
+        }
+
+        .icon-advantage {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #31C48D;
+        }
+
+        .btn-choose-service {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #31C48D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            /* Добавлены изменения для тени и анимации */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+        }
+        .btn-choose-service a {
+            color: inherit; /* Наследовать цвет текста от родительского элемента */
+            text-decoration: none; /* Убрать подчеркивание текста */
+  }
+
+  /* Стиль для ссылки внутри кнопки при наведении */
+        .btn-choose-service a:hover {
+            color: inherit; /* Наследовать цвет текста от родительского элемента */
+            text-decoration: none; /* Убрать подчеркивание текста */
+  }
+
+        /* Стили для зелёной стрелки */
+            .green-arrow {
+                color: #31C48D;
+                font-weight: bold; /* Если нужно сделать стрелку более заметной */
+}
+            .icons {
+                flex: 1;
+                text-align: right;
+                max-height: 100px;
+                display: flex; /* Добавляем flex для центрирования по вертикали и горизонтали */
+                align-items: center; /* Центрирование по вертикали */
+                justify-content: center; /* Центрирование по горизонтали */
+}
+
+            .icon-stage {
+                height: fixed;
+                max-height: 100%;
+                max-width: 100%; /* Добавляем максимальную ширину 100% для адаптивности */
+}
+
+
+
+            .btn-choose-service:hover {
+                background-color: #228B5A;
+                transform: scale(1.05);
+        }
+            .icon-advantage img {
+                max-width: 285px;
+                max-height: 285px;
+}
+
+        
+            .br {
+                margin-bottom: 5px;
+}
+
+
+        /* Медиа-запрос для компьютерной версии */
+        @media (min-width: 769px) {
+            .service-container {
+                flex-basis: calc(33.33% - 20px); /* Распределение на 3 столбца с отступами между ними */
+            }
+            .mobile-icon {
+    display: none;
+  }
+        }
+
+       /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .green-box {
+                font-size: 24px;
+            }
+
+            .left-half, .right-half {
+                flex: 1;
+                padding: 10px;
+            }
+
+            .title-h1 {
+                font-size: 24px;
+            }
+
+            .service-container {
+                flex-basis: calc(50% - 20px); /* Распределение на 2 столбца с отступами между ними */
+                padding: 10px;
+                margin: 5px;
+            }
+
+            .service-container h3 {
+                font-size: 16px;
+            }
+
+            .service-container p {
+                font-size: 14px;
+            }
+
+            .service-container button {
+                font-size: 14px;
+            }
+
+            .stage h2, .left-half h2 {
+                font-size: 20px;
+    }
+
+            .stage h3 {
+                font-size: 16px;
+    }
+
+            .stage-content {
+                flex-direction: column;
+                text-align: left;
+    }
+
+ 
+
+
+
+            .advantage h2 {
+                font-size: 20px;
+            }
+
+            .advantage h3 {
+                font-size: 14px;
+            }
+
+            .btn-choose-service {
+                font-size: 16px;
+                width: 90%;
+                }
+
+            .show-more-button{
+                font-size: 16px;
+                width: 90%;
+                }
+                .mobile-icon {
+  display: block;
+  text-align: center; /* Центрирование изображения */
+  margin-bottom: 185px; /* Добавляем верхний отступ для контейнера с изображением */
+}
+
+.mobile-icon img {
+  max-width: 100%; /* Максимальная ширина изображения на уровне 100% ширины контейнера */
+  max-height: 285px; /* Максимальная высота изображения на уровне 350px */
+  height: auto; /* Автоматическое изменение высоты, чтобы сохранить соотношение сторон */
+}
+
+.desktop-icon {
+  display: none;
+}
+
+  
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 440px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .green-box {
+                font-size: 24px;
+            }
+
+            .left-half, .right-half {
+                flex: 1;
+                padding: 10px;
+            }
+
+            .title-h1 {
+                font-size: 24px;
+            }
+
+            .service-container {
+                flex-basis: calc(100% - 20px); /* Распределение на 2 столбца с отступами между ними */
+                padding: 10px;
+                margin: 5px;
+            }
+
+            .service-container h3 {
+                font-size: 16px;
+            }
+
+            .service-container p {
+                font-size: 14px;
+            }
+
+            .service-container button {
+                font-size: 14px;
+            }
+
+            .stage h2, .left-half h2 {
+                font-size: 20px;
+            }
+
+            .stage h3 {
+                font-size: 16px;
+            }
+
+            .advantage h2 {
+                font-size: 20px;
+            }
+
+            .advantage h3 {
+                font-size: 16px;
+            }
+
+            .btn-choose-service {
+                font-size: 16px;
+                width: 90%;
+            }
+            .show-more-button{
+                font-size: 16px;
+                width: 90%;
+                }
+                .mobile-hidden {
+            display: none; /* Скрываем блок на мобильных устройствах */
+        }
+}
+
+        /* Обновленные стили для попапа */
+        .overlay {
+            display: none;
+            position: fixed; /* Заменено на fixed */
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            max-width: 90%;
+        }
+
+        .popup h2 {
+            background-color: #31C48D;
+            color: white;
+            padding: 10px 0;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .popup form {
+            margin-top: 20px;
+            
+        }
+
+        .popup input[type="text"],
+        .popup input[type="email"],
+        .popup textarea,
+        .popup input[type="tel"] {
+            width: 99%;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+}
+
+
+        .popup button[type="submit"] {
+            background-color: #31C48D;
+            width: 100%;
+            color: white;
+            border: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 0 0 10px 10px ;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup button[type="submit"]:hover {
+            background-color: #228B5A;
+        }
+
+        /* Скрыть вертикальную полосу прокрутки при открытии popup окна */
+        body.popup-open {
+            overflow: hidden;
+        }
+
+        /* Стили для пагинации услуг */
+        .show-more-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #31C48D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            /* Добавлены изменения для тени и анимации */
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .show-more-button:hover {
+            background-color: #228B5A;
+            transform: scale(1.05);
+        }
+
+        /* Стили для скрытия лишних услуг */
+        .service-hidden {
+            display: none;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="green-box">Особый заголовок</div>
+        <div class="split stages mobile-hidden">
+            <div class="stage">
+                <div class="stage-content">
+                    <div class="icons">
+                        <img class="icon-stage" src="https://img.freepik.com/free-vector/www-concept-illustration_114360-2143.jpg?w=740&t=st=1695762781~exp=1695763381~hmac=cd9a9616afaeab3df79cf66e7141864a32d5f295102b818a0b701160988ad5c1" alt="На экране устройства ваш сайт"><!-- https://ru.freepik.com/free-vector/www-concept-illustration_8426454.htm#from_view=detail_author -->
+                    </div>
+                    <div class="stage-text">
+                        <p> <strong>Интернет - место, где решения принимаются мгновенно.</strong> 
+                            <br>А ваш сайт в нём - визитная карточка бизнеса, привлекающая клиентов и укрепляющая лояльность.</p>
+                    
+                            <p style="font-size: 20px;"><strong>С сайтом вы получите:</strong></p>
+                            <p><strong>Привлечение клиентов 24/7:</strong> Ваш сайт работает круглосуточно, привлекая клиентов даже ночью.</p>
+                            <p><strong>Укрепление лояльность:</strong> Предоставьте удобство и информацию, которую клиенты ищут.</p>
+                            <p><strong>Развитие:</strong> Онлайн-присутствие помогает вашему бизнесу расти.</p>
+                    
+                            <p style="font-size: 20px;"><strong>Первый шаг к успеху - ваш сайт с нами.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <h1 id="services" class="title-h1">Услуги</h1>
+
+        <div class="service-list">
+            <div class="split">
+    {% for product in products %}
+                <div class="service-container">
+                    <h3>{{ product.title }}</h3>
+                    <p>{{ product.text }}</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+    {% endfor %}
+                <div class="service-container">
+                    <h3>Сайты на WordPress</h3>
+                    <p>Современные и функциональные веб-сайты на WordPress.</p>
+                    <button class="order-button" data-service="Услуга 1">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container">
+                    <h3>Сайты на HTML+CSS+JS+Django</h3>
+                    <p>Высококачественные сайты с использованием современных технологий.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container">
+                    <h3>Дизайн и концепция</h3>
+                    <p>Уникальный дизайн и концепция для вашего веб-проекта.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container">
+                    <h3>Обучение управлению сайтом</h3>
+                    <p>Знания и навыки по управлению вашим веб-сайтом.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container">
+                    <h3>SEO-оптимизация</h3>
+                    <p>Достижение высоких позиций в поисковых системах для привлечения целевой аудитории.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container">
+                    <h3>Заполнение контентом</h3>
+                    <p>Уникальные тексты и изображения для привлечения и информирования посетителей.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container">
+                    <h3>Разработка логотипа</h3>
+                    <p>Пять вариантов логотипа для выбора лучшего.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div> 
+
+                <div class="service-container">
+                    <h3>Индивидуальный дизайн</h3>
+                    <p>Создание уникального и креативного дизайна, который выделит ваш сайт из толпы.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Адаптивная верстка</h3>
+                    <p>Гарантируем, что ваш сайт будет идеально отображаться на всех устройствах, включая смартфоны и планшеты.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Интеграция электронной коммерции</h3>
+                    <p>Добавление функциональности электронной коммерции для продажи товаров или услуг онлайн.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Аналитика и оптимизация</h3>
+                    <p>Мониторинг и оптимизация вашего сайта для увеличения его производительности и конверсии.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Разработка мультиязычных сайтов</h3>
+                    <p>Поддержка нескольких языков для привлечения международной аудитории.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <!-- Дополнительные услуги -->
+                <div class="service-container service-hidden">
+                    <h3>Создание форума и сообщества</h3>
+                    <p>Разработка форума и платформы для взаимодействия вашей аудитории и создания сообщества.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+            
+                <div class="service-container service-hidden">
+                    <h3>Сайты для краудфандинга</h3>
+                    <p>Платформы для организации и продвижения краудфандинговых проектов.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>    
+
+                <!-- Дополнительные услуги -->
+                <div class="service-container service-hidden">
+                    <h3>Сайты для онлайн-курсов и обучения</h3>
+                    <p>Платформы для создания и продажи онлайн-курсов и обучающих программ.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container service-hidden">
+                    <h3>Анимированные истории на сайте</h3>
+                    <p>Интерактивные истории с анимацией и мультимедийными элементами.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container service-hidden">
+                    <h3>Сайты для голосований и опросов</h3>
+                    <p>Веб-платформы для проведения опросов и голосований.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container service-hidden">
+                    <h3>Онлайн-калькуляторы и оценка стоимости</h3>
+                    <p>Интерактивные инструменты для расчетов и оценки стоимости товаров и услуг.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container service-hidden">
+                    <h3>Сайты для событийных организаторов</h3>
+                    <p>Сайты для продвижения и продажи билетов на мероприятия.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <!-- Добавьте остальные услуги по аналогии -->
+                
+                <div class="service-container service-hidden">
+                    <h3>Сайты для продажи искусства и антиквариата</h3>
+                    <p>Платформы для аукционов и продажи ценных предметов.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Сайты для онлайн-рецептов и кулинарных блогов</h3>
+                    <p>Платформы для публикации и обмена рецептами и кулинарными советами.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container service-hidden">
+                    <h3>Интерактивные веб-комиксы</h3>
+                    <p>Онлайн-комиксы с интерактивными элементами и анимацией.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Сайты для онлайн-групп и клубов по интересам</h3>
+                    <p>Веб-сообщества и платформы для обмена информацией.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Веб-порталы для онлайн-рекрутинга</h3>
+                    <p>Создание сайтов для поиска и подбора персонала.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Сайты для онлайн-газет и журналов</h3>
+                    <p>Поддержка для цифровых изданий с адаптивным дизайном и возможностью подписки.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Интерактивные веб-игры и викторины</h3>
+                    <p>Разработка игровых платформ и викторин для развлечения аудитории.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Порталы для онлайн-консультаций по психологии и здоровью</h3>
+                    <p>Веб-платформы для получения советов и поддержки.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Геолокационные сайты</h3>
+                    <p>Разработка сайтов с функциональностью, зависящей от местоположения пользователя.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+                
+                <div class="service-container service-hidden">
+                    <h3>Веб-порталы для путешественников</h3>
+                    <p>Разработка порталов с информацией о путешествиях, бронированием и отзывами.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+
+                <div class="service-container service-hidden">
+                    <h3>Виртуальные магазины подарков и сувениров</h3>
+                    <p>Создание интернет-магазинов с нестандартными идеями для подарков.</p>
+                    <button class="order-button">ЗАКАЗАТЬ</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="show-more-button">ПОКАЗАТЬ ЕЩЁ</button>
+
+        <div class="split stages">
+            <div class="stage">
+                <div class="stage-content">
+                    <div class="icons desktop-icon">
+                        <img class="icon-stage" src="https://img.freepik.com/free-vector/in-the-office-concept-illustration_114360-1406.jpg?w=740&t=st=1695761210~exp=1695761810~hmac=b31942ea40cc826dad10c8d0cfd8c724fa05ef42e49f311b5462edb476ab0640" alt="Наша команда обсуждает детали вашего проекта"><!-- https://ru.freepik.com/free-vector/in-the-office-concept-illustration_7140422.htm#from_view=detail_alsolike -->
+                    </div>
+                    <div class="stage-text">
+                        <h2>Этап 1: Планирование</h2>
+                        <div class="icons mobile-icon">
+                            <img class="icon-stage" src="https://img.freepik.com/free-vector/in-the-office-concept-illustration_114360-1406.jpg?w=740&t=st=1695761210~exp=1695761810~hmac=b31942ea40cc826dad10c8d0cfd8c724fa05ef42e49f311b5462edb476ab0640" alt="Другое изображение для мобильной версии">
+                        </div>
+                        <h3><span class="green-arrow">></span> Мы начинаем с беседы, чтобы полностью понять ваши цели и конкретные пожелания для создания сайта. 
+                        <p><span class="green-arrow">></span> Затем мы внимательно изучаем вашу аудиторию и анализируем конкурентов.</p>
+                        <p><span class="green-arrow">></span> Вместе с вами мы разрабатываем стратегию и конкретные бизнес-требования.</p></h3>
+                    </div>
+                </div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+        
+
+        <div class="split stages">
+            <div class="stage">
+                <div class="stage-content">
+                    <div class="stage-text">
+                        <h2>Этап 2: Дизайн</h2>
+                        <div class="icons mobile-icon">
+                            <img class="icon-stage" src="https://img.freepik.com/free-vector/design-process-concept-illustration_114360-578.jpg?w=740&t=st=1695761112~exp=1695761712~hmac=5365ad6a51c86b1e9dc44d113b283e5986724f06a4036e0c6250d5d24cbf6bb7" alt="Доска настроения выбор шрифтов цвета и так далее">
+                        </div>
+                        <h3><span class="green-arrow">></span> Мы создаем макеты и прототипы, чтобы вы могли визуально представить будущий сайт.
+                            <p><span class="green-arrow">></span> Вместе мы выбираем стиль и дизайн, подходящие именно вам.</p>
+                            <p><span class="green-arrow">></span> Мы определяем функциональные требования для интеграции необходимых функций.</p></h3>
+                        </div>
+                        <div class="icons desktop-icon">
+                            <img class="icon-stage" src="https://img.freepik.com/free-vector/design-process-concept-illustration_114360-578.jpg?w=740&t=st=1695761112~exp=1695761712~hmac=5365ad6a51c86b1e9dc44d113b283e5986724f06a4036e0c6250d5d24cbf6bb7" alt="Доска настроения выбор шрифтов цвета и так далее"><!-- https://ru.freepik.com/free-vector/design-process-concept-illustration_5908835.htm#from_view=detail_alsolike -->
+                        </div>
+                </div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+       
+        <div class="split stages">
+            <div class="stage">
+                <div class="stage-content">
+                    <div class="icons desktop-icon">
+                        <img class="icon-stage" src="https://img.freepik.com/free-vector/website-designer-concept-illustration_114360-4449.jpg?w=740&t=st=1695760915~exp=1695761515~hmac=69d14eacc292f4568de0c7e16721bdd398baa3f7f5038aa88ae31021ca7c4bb9" alt="Показан этап разработки сайта"><!-- https://ru.freepik.com/free-vector/website-designer-concept-illustration_11641810.htm#page=13&position=12&from_view=author -->
+                    </div>
+                    <div class="stage-text">
+                        <h2>Этап 3: Разработка</h2>
+                        <div class="icons mobile-icon">
+                            <img class="icon-stage" src="https://img.freepik.com/free-vector/website-designer-concept-illustration_114360-4449.jpg?w=740&t=st=1695760915~exp=1695761515~hmac=69d14eacc292f4568de0c7e16721bdd398baa3f7f5038aa88ae31021ca7c4bb9" alt="Показан этап разработки сайта">
+                        </div>
+                        <h3> <span class="green-arrow">></span> Наши специалисты пишут эффективный код для вашего сайта и интегрируют управление контентом.
+                            <p> <span class="green-arrow">></span> Мы также уделяем особое внимание производительности и безопасности сайта.</p>
+                            <p> <span class="green-arrow">></span> Ваш сайт проходит тщательное тестирование перед запуском.</p></h3>
+                        </div>
+                </div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+            
+
+        <div class="split stages">
+            <div class="stage">
+                <div class="stage-content">
+                    <div class="stage-text">
+                        <h2>Этап 4: Запуск и Оптимизация</h2>
+                        <div class="icons mobile-icon">
+                            <img class="icon-stage" src="https://img.freepik.com/free-vector/startup-life-concept-illustration_114360-1226.jpg?w=740&t=st=1695760732~exp=1695761332~hmac=d2500323236d33f46e38700f5660329a3742a758ae4cf628e472f5e84d65f4ae" alt="Ваш проект взлетает на ракете">
+                        </div>
+                        <h3><span class="green-arrow">></span> После успешного тестирования наша команда готова к запуску вашего сайта.
+                            <p><span class="green-arrow">></span> Мы регистрируем доменное имя и размещаем сайт на сервере.</p>
+                            <p><span class="green-arrow">></span> После запуска мы не прекращаем работу, а постоянно оптимизируем и обновляем сайт, чтобы он всегда оставался актуальным и производительным.</p></h3>
+                        </div>
+                        <div class="icons desktop-icon">
+                            <img class="icon-stage" src="https://img.freepik.com/free-vector/startup-life-concept-illustration_114360-1226.jpg?w=740&t=st=1695760732~exp=1695761332~hmac=d2500323236d33f46e38700f5660329a3742a758ae4cf628e472f5e84d65f4ae" alt="Ваш проект взлетает на ракете"><!-- https://ru.freepik.com/free-vector/startup-life-concept-illustration_7117747.htm#from_view=detail_alsolike -->
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <button class="btn-choose-service" onclick="scrollToServices()">ВЫБРАТЬ УСЛУГУ</button>
+
+        <div class="split advantages">
+            <div class="advantage">
+                <h2>Профессионализм и креативность:</h2>
+                <h3><span class="green-arrow">></span> Опытные сотрудники, с успешными кейсами.
+                <p><span class="green-arrow">></span> Уникальные и передовые решения.</p></h3>
+                <div class="icon-advantage"><img src="https://img.freepik.com/free-vector/collaboration-concept-illustration_114360-439.jpg?w=740&t=st=1695760556~exp=1695761156~hmac=8a822a8bdb09918e0721bb7fc59b430e66153182b91f335d34a4668b420bce5c" alt="Изображение людей собирающих метафорический пазл разных этапов работ" ></div><!-- https://ru.freepik.com/free-vector/collaboration-concept-illustration_5538028.htm#from_view=detail_alsolike -->
+            </div>
+            <div class="advantage">
+                <h2>Внимание и индивидуализм:</h2>
+                <h3><span class="green-arrow">></span> Работаем, учитывая ваши потребности.
+                    <p><span class="green-arrow">></span> Коммуникация с вами - наш приоритет.</p></h3>
+                    <div class="icon-advantage"><img src="https://img.freepik.com/free-vector/interview-concept-illustration_114360-1482.jpg?w=740&t=st=1695760251~exp=1695760851~hmac=4683c40936fa935cf6eb2d3e604c6064ea18a66bb4ba3831b6ef405266ec4177" alt="Изображение общения книента и исполнителя" ></div><!-- https://ru.freepik.com/free-vector/interview-concept-illustration_7171448.htm#from_view=detail_alsolike -->
+            </div>
+            <div class="advantage">
+                <h2>Точность и обязательность:</h2>
+                <h3><span class="green-arrow">></span> Достижение целей в срок и бюджет.
+                    <p><span class="green-arrow">></span> Поддержим вас после завершения.</p></h3>
+                    <div class="icon-advantage"><img src="https://img.freepik.com/free-vector/work-time-concept-illustration_114360-1232.jpg?w=740&t=st=1695760130~exp=1695760730~hmac=ade8b7ad239f391b3e52db75b7f5f079cda13bb692b09657bda479c5126dc766" alt="Изображение работающего человечка"></div> <!-- https://ru.freepik.com/free-vector/work-time-concept-illustration_7117896.htm#from_view=detail_alsolike -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Всплывающее окно с формой обратной связи -->
+    <div class="overlay" id="popup">
+        <div class="popup">
+            <div class="close-btn" id="close-popup">&#10006;</div>
+            <h2>Форма обратной связи</h2>
+            <form method="post">
+                {{csrf_token}}
+                {{form}}
+                <!-- Добавьте поля для формы обратной связи здесь -->
+                <input type="hidden" id="selected-service" name="selected-service" value="">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" id="email" name="email" placeholder="Ваш Email">
+                <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона" required pattern="^(?:\+7|8)[0-9]{10}$">
+                <button type="submit">ОТПРАВИТЬ</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+
+     function scrollToServices() {
+        const servicesSection = document.getElementById('services');
+        servicesSection.scrollIntoView({ behavior: 'auto' });
+}
+
+        // Обработчик для кнопки "ЗАКАЗАТЬ"
+        const orderButtons = document.querySelectorAll('.order-button');
+        orderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                document.body.classList.add('popup-open'); // Запрет прокрутки заднего фона
+                document.getElementById('popup').style.display = 'flex'; // Отображение popup окна
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Находим все кнопки "ЗАКАЗАТЬ"
+            const orderButtons = document.querySelectorAll(".order-button");
+
+            // Обработчик события для каждой кнопки "ЗАКАЗАТЬ"
+            orderButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+            // Получаем текст заголовка услуги
+            const serviceTitle = button.closest(".service-container").querySelector("h3").textContent;
+
+            // Устанавливаем значение скрытого поля
+            const selectedServiceInput = document.getElementById("selected-service");
+            selectedServiceInput.value = serviceTitle;
+        });
+    });
+});
+
+        // Обработчик для кнопки закрытия popup окна
+        document.getElementById('close-popup').addEventListener('click', () => {
+            document.body.classList.remove('popup-open'); // Разрешение прокрутки заднего фона
+            document.getElementById('popup').style.display = 'none'; // Скрытие popup окна
+        });
+
+        // Обработчик для кнопки "Показать ещё"
+        const showMoreButton = document.querySelector('.show-more-button');
+        const serviceList = document.querySelector('.service-list');
+        const hiddenServices = document.querySelectorAll('.service-hidden');
+
+        let currentPage = 1;
+        const servicesPerPage = 3; // Количество услуг на странице
+
+        function showMoreServices() {
+            const startIndex = (currentPage - 1) * servicesPerPage;
+            const endIndex = startIndex + servicesPerPage;
+            hiddenServices.forEach((service, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    service.style.display = 'block';
+                }
+            });
+
+            currentPage++;
+
+            // Если больше нет скрытых услуг, скрываем кнопку "Показать ещё"
+            if (endIndex >= hiddenServices.length) {
+                showMoreButton.style.display = 'none';
+            }
+        }
+
+        showMoreButton.addEventListener('click', showMoreServices);
+    </script>
+</body>
+</html>
